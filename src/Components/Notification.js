@@ -24,6 +24,8 @@ function Notification() {
         pauseOnHover="FALSE"
         pauseOnFocusLoss="FALSE"
         draggable="true"
+        theme='dark'
+        autoClose={1000}
       />
     </div>
   )

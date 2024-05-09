@@ -10,6 +10,7 @@ import Match from './Components/Match.js';
 import ProfilePic from './Components/ProfilePic';
 import ParentComponent from './Components/ParentComponent.js';
 
+
 function App() {
   const [loading, setLoading] = useState(true);
   const [people, setPeople] = useState([]);
@@ -18,7 +19,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8000/people');
+        const response = await fetch('http://localhost:3000/people');
         const data = await response.json();
         setPeople(data);
         setLoading(false);
@@ -44,7 +45,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-    <Match selectedPeople={likedPeople} onRemove={handleRemovePerson}/>
+      {/* <Match/> */}
         {loading ? (
           <div className='load-container'>LOVETUBE</div>
         ) : (

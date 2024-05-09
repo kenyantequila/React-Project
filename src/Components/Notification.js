@@ -1,29 +1,26 @@
 import React from 'react'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from'react-toastify';
+import'react-toastify/dist/ReactToastify.css';
 
 function Notification() {
-
-  const show = () =>
-    toast.info("Here is a list of Matches!");
-
-  const notify = () =>
-    toast.success("Selected!");
-
-
-  const provide = () =>
-    toast.warning("Are you sure!");
+  const notify = () => 
+    toast.success("remove!");
+  
+  const show = () => 
+    toast.info("selected!");
+  const provide = () => 
+    toast.warning("are you sure!");
   return (
     <div>
-      <button onClick={show}>List of Matches!</button>
-      <button onClick={notify}>Select!</button>
-      <button onClick={provide}>Choice!</button>
-
-      <ToastContainer position='top-center'
-        pauseOnHover="FALSE"
+          <button onClick={notify}>remove!</button>
+          <button onClick={show}>SELECT!</button>
+          <button onClick={provide}>choose!</button>
+          
+        <ToastContainer position='top-center'
+        pauseOnHover="FALSE" 
         pauseOnFocusLoss="FALSE"
         draggable="true"
-      />
+        />
     </div>
   )
 }

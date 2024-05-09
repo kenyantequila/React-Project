@@ -31,6 +31,7 @@ function PeopleItem({ name, age, gender, location, interests, preferences, image
 
 
     return (
+        
         <div className='big-Container'>
             <div className='card-text'>
                 <p className="p-detail">
@@ -58,9 +59,11 @@ function PeopleItem({ name, age, gender, location, interests, preferences, image
                 </div>
             </div>
             <button onClick={handleLike} className="like-button">❤️</button>
-            <Notification />
+
+
         </div>
     );
+    
 }
 
 export default PeopleItem;

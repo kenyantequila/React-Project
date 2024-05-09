@@ -1,5 +1,5 @@
 import React from 'react'
-import { ToastContainer, toast } from'react-toastify';
+import { Bounce, Flip, ToastContainer, toast } from'react-toastify';
 import'react-toastify/dist/ReactToastify.css';
 
 function Notification() {
@@ -16,10 +16,14 @@ function Notification() {
           <button onClick={show}>choose!</button>
           <button onClick={provide}>choose!</button>
           
-        <ToastContainer position='bottom-center'
+        <ToastContainer 
+        position='top-center'
         pauseOnHover="FALSE" 
         pauseOnFocusLoss="FALSE"
         draggable="true"
+        transition={Flip}
+        theme='dark'
+        
         />
     </div>
   )

@@ -9,6 +9,7 @@ import ProfilePage from './Components/ProfilePage';
 import PeopleItem from './Components/PeopleItem'; 
 import ProfilePic from './Components/ProfilePic'; 
 import ParentComponent from './Components/ParentComponent.js';
+import Notification from './Components/Notification.js';
 // Import ProfilePic component
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
 
   return (
     <Router>
+      <Notification />
       <div className="App">
         {loading ? (
           <div className='load-container'>LOVETUBE</div>

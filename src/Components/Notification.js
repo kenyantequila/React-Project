@@ -1,7 +1,7 @@
 import React from 'react'
 import { Bounce, Flip, ToastContainer, toast } from'react-toastify';
 import'react-toastify/dist/ReactToastify.css';
-import './Notification.css'
+
 
 function Notification() {
   const show = () => 
@@ -12,6 +12,10 @@ function Notification() {
   
   const provide = () => 
     toast.warning("are you sure!");
+
+
+  
+ 
   
   return (
     <div>
@@ -28,6 +32,7 @@ function Notification() {
         draggable="true"
         transition={Flip}
         theme='dark'
+        autoClose={1000}
         
         />
     </div>

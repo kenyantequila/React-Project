@@ -4,11 +4,11 @@ import'react-toastify/dist/ReactToastify.css';
 import './Notification.css'
 
 function Notification() {
-  const notify = () => 
-    toast.success("selected!");
-  
   const show = () => 
     toast.info("Here are list of Avators!");
+
+  const notify = () => 
+    toast.success("selected!");
   
   const provide = () => 
     toast.warning("are you sure!");
@@ -16,13 +16,13 @@ function Notification() {
   return (
     <div>
       <div className='btn'>
+        <button onClick={show}>choose!</button>
           <button onClick={notify}>select!</button>
-          <button onClick={show}>choose!</button>
           <button onClick={provide}>choose!</button>
           </div>
           
         <ToastContainer 
-        position='top-center'
+        position='bottom-right'
         pauseOnHover="FALSE" 
         pauseOnFocusLoss="FALSE"
         draggable="true"

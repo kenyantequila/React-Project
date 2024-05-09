@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8000/people');
+        const response = await fetch('http://localhost:3000/people');
         const data = await response.json();
         setPeople(data);
         setLoading(false);

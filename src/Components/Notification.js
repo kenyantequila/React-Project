@@ -9,8 +9,7 @@ function Notification() {
   
   const show = () => 
     toast.info("Here are list of Avators!");
-  toast.info("select prefered Avator while scrolling along them!");
- 
+  
   const provide = () => 
     toast.warning("are you sure!");
   

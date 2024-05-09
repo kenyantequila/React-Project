@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './PeopleItem.css';
+import Notification from './Notification';
 
 function PeopleItem({ name, age, gender, location, interests, preferences, imageSrc }) {
     const [showDetails, setShowDetails] = useState(false);
@@ -47,7 +48,7 @@ function PeopleItem({ name, age, gender, location, interests, preferences, image
                 </div>
             </div>
             <button onClick={handleLike} className="like-button">❤️</button>
-
+                    <Notification/>
         </div>
     );
 }

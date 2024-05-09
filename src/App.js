@@ -5,15 +5,16 @@ import "./App.css";
 import PeopleList from './Components/PeopleList.js';
 import FormPage from './Components/FormPage';
 import WelcomePage from './Components/WelcomePage';
-import ProfilePage from './Components/ProfilePage'; 
-import PeopleItem from './Components/PeopleItem'; 
-import ProfilePic from './Components/ProfilePic'; 
+import ProfilePage from './Components/ProfilePage';
+import Match from './Components/Match.js';
+import ProfilePic from './Components/ProfilePic';
 import ParentComponent from './Components/ParentComponent.js';
-// Import ProfilePic component
+
 
 function App() {
   const [loading, setLoading] = useState(true);
   const [people, setPeople] = useState([]);
+  const [likedPeople, setLikedPeople] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,7 +25,7 @@ function App() {
         setLoading(false);
       } catch (error) {
         console.error('Error fetching data:', error);
-        setLoading(false); // Set loading to false in case of an error
+        setLoading(false);
       }
     };
 
@@ -35,9 +36,16 @@ function App() {
     return () => clearTimeout(timeout);
   }, []);
 
+  const handleLikedPerson = (person) => {
+    setLikedPeople([...likedPeople, person]);
+  };
+  const handleRemovePerson = (personToRemove) => {
+    setLikedPeople(likedPeople.filter(person => person !== personToRemove));
+  };
   return (
     <Router>
       <div className="App">
+      {/* <Match/> */}
         {loading ? (
           <div className='load-container'>LOVETUBE</div>
         ) : (
@@ -46,10 +54,10 @@ function App() {
             <Route path="/form" element={<FormPage />} />
             <Route path="/welcome" element={<WelcomePage />} />
             <Route path="/profile" element={<ProfilePage />} />
-            <Route path="/profilepic" element={<ProfilePic />} /> 
+            <Route path="/profilepic" element={<ProfilePic />} />
             <Route path="/parentcomponent" element={<ParentComponent />} />
-            <Route path="/peopleitem" element={<PeopleItem />} />
-            <Route path="/peoplelist" element={<PeopleList people={people} />} />
+
+            <Route path="/peoplelist" element={<PeopleList people={people} onSelect={handleLikedPerson} />} />
           </Routes>
         )}
       </div>
@@ -57,4 +65,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;
